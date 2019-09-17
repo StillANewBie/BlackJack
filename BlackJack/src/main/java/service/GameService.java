@@ -7,7 +7,7 @@ import model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-import static factory.ConstantsFactory.NUM_DECK;
+import static factory.ConstantsFactory.*;
 
 public class GameService {
 
@@ -79,14 +79,42 @@ public class GameService {
     }
 
     public String dealerHit() {
+        String message = null;
 
-        // TODO
+        // from dealer rules
+        if (getDealer().getHiScore() < DEALER_LOW_HIT
+                || getDealer().getHiScore() < players.get(0).getHiScore()
+                || (getDealer().getNumOfAce() > 0 && getDealer().getHiScore() > getDealer().getLowScore()
+                && getDealer().getHiScore() < DEALER_HIGH_ACE_HIT)) {
+            message = getDealer().hit(serveCard());
+            if (message != null) {
+                if (message.equals("BUSTED")) {
+                    System.out.println("Dealer busted. You win.");
+                    System.out.println("Start next game ...");
+                } else if (message.equals("GOAL")) {
+                    System.out.println("Dealer reaches GOAL.");
+                }
+            }
+
+            return message;
+        }
+
+        message = "Dealer Holds";
         return null;
     }
 
     public String playerHit() {
-        //TODO
-        return null;
+        String message = getPlayers().get(0).hit(serveCard());
+        if (message != null) {
+            if (message.equals(BUSTED)) {
+                System.out.println(getPlayers().get(0).getName() + " busted.");
+                System.out.println("Start next game ...");
+            } else if (message.equals(GOAL)) {
+                System.out.println("Dealer reaches GOAL.");
+            }
+        }
+
+        return message;
     }
 
     public void setCumulativeScores() {
@@ -94,6 +122,15 @@ public class GameService {
     }
 
     public static void main(String[] args) {
-
+        GameService gs = new GameService();
+        System.out.println(gs.players.get(0).getLowScore());
+        System.out.println(gs.players.get(0).getHiScore());
+        System.out.println(gs.players.get(0).hit(gs.serveCard()));
+        gs.players.get(0).printCardsOnBoard();
+        System.out.println(gs.players.get(0).getLowScore());
+        System.out.println(gs.players.get(0).getHiScore());
+        System.out.println(gs.players.get(0).hit(gs.serveCard()));
+        System.out.println(gs.players.get(0).getLowScore());
+        System.out.println(gs.players.get(0).getHiScore());
     }
 }

@@ -11,11 +11,21 @@ public class GameController {
         return gs;
     }
 
+    public void init() {
+        // TODO
+    }
+
+    public void startGame() {
+        // TODO
+    }
+
     public static void main(String[] args) {
         getGs().initPlayer("################");
         getGs().getDealer().printCardsOnBoard();
         getGs().getPlayers().get(0).printCardsOnBoard();
         System.out.println(getGs().getPlayers().get(0).getHiScore());
         System.out.println(getGs().getPlayers().get(0).getLowScore());
+        System.out.println(getGs().getDealer().getHiScore());
+        System.out.println(getGs().getDealer().getLowScore());
     }
 }
