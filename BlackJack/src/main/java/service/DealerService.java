@@ -20,7 +20,10 @@ public class DealerService extends GenericPlayerService {
 
     @Override
     public void printCardsOnBoard() {
-        System.out.println("Dealer:");
+        System.out.println("Dealer: ");
+
+        // hidden card
+        System.out.print("*******\t");
         super.printCardsOnBoard();
     }
 }

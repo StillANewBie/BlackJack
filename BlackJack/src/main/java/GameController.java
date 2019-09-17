@@ -16,5 +16,6 @@ public class GameController {
         getGs().getDealer().printCardsOnBoard();
         getGs().getPlayers().get(0).printCardsOnBoard();
         System.out.println(getGs().getPlayers().get(0).getHiScore());
+        System.out.println(getGs().getPlayers().get(0).getLowScore());
     }
 }

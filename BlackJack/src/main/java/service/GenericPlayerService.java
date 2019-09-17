@@ -6,6 +6,7 @@ import model.Rank;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static factory.ConstantsFactory.*;
 
@@ -43,19 +44,25 @@ public abstract class GenericPlayerService {
     }
 
     public int getScoreWithoutA() {
-        int sum = this.player.getCardsOnBoard()
-                .stream().filter(el -> !el.getRank().getDisplayValue().equals(Rank.ACE))
-                .mapToInt(el -> el.getRank().getValue()).sum();
-
-        return sum;
+//        int sum = this.player.getCardsOnBoard()
+//                .stream().filter(el -> !el.getRank().getDisplayValue().equals(Rank.ACE))
+//                .mapToInt(el -> el.getRank().getValue()).sum();
+        AtomicInteger sum = new AtomicInteger();
+        this.player.getCardsOnBoard().forEach(el -> {
+            if (el.getRank().getValue() != 11) {
+                sum.addAndGet(el.getRank().getValue());
+            }
+        });
+        return sum.get();
     }
 
     public int getHiScore() {
         if (getNumOfAce() < 1) {
             return getScoreWithoutA();
         }
-        int max = getScoreWithoutA() + ACE_HIGH_VALUE + getNumOfAce() - 1;
-        int value = max > 21 ? getScoreWithoutA() + getNumOfAce() : max;
+        int max = getScoreWithoutA() + Rank.ACE.getValue() + getNumOfAce() - 1;
+        // there could only be one high ace without being busted
+        int value = max > GAME_GOAL ? getScoreWithoutA() + getNumOfAce() : max;
 
         return value;
     }
@@ -65,7 +72,7 @@ public abstract class GenericPlayerService {
     }
 
     public int getNumOfAce() {
-        return getCardsOnBoard().stream().filter(el -> el.getRank().getDisplayValue().equals(Rank.ACE)).toArray().length;
+        return getCardsOnBoard().stream().filter(el -> el.getRank().getValue() == 11).toArray().length;
     }
 
     public List<Card> getCardsOnBoard() {
