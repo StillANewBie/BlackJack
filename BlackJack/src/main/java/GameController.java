@@ -7,21 +7,22 @@ import static factory.ConstantsFactory.*;
 
 public class GameController {
 
-    private static GameService gs = null;
+    private GameService gs;
 
-    public static GameService getGs() {
-        if (gs == null) {
-            gs = new GameService();
-        }
-        return gs;
-    }
-
-    public static void init() {
-        // TODO
+    public void init() throws InterruptedException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String name = scanner.nextLine();
+        gs = new GameService(name);
         startGame();
+
+        while (!scanner.nextLine().equals("exit")) {
+            gs = new GameService(name);
+            startGame();
+        }
     }
 
-    public static void startGame() {
+    public void startGame() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         String messageDealer = gs.dealerHit();
         String messagePlayer = null;
@@ -76,8 +77,8 @@ public class GameController {
         }
     }
 
-    public static void main(String[] args) {
-        getGs().initPlayer("################");
-        init();
+    public static void main(String[] args) throws InterruptedException {
+        GameController gc = new GameController();
+        gc.init();
     }
 }

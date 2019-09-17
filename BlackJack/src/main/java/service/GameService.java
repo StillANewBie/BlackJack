@@ -17,10 +17,10 @@ public class GameService {
     private List<PlayerService> players;
 
     // for single player only
-    public GameService() {
+    public GameService(String name) throws InterruptedException {
         this.dealer = new DealerService(new Dealer());
         this.players = new ArrayList<>();
-        this.players.add(new PlayerService(new Player(0, "Player 1")));
+        this.players.add(new PlayerService(new Player(0, name)));
         this.cards = DeckService.initDeck(NUM_DECK);
 
         initGame();
@@ -29,11 +29,6 @@ public class GameService {
 //    public void initDecks(int num) {
 //        this.cards = DeckService.initDeck(num);
 //    }
-
-    // for single player only.
-    public void initPlayer(String name) {
-        this.players.get(0).setName(name);
-    }
 
 //    // for multiple players
 //    public GameService(int numDeck, List<String> name) {
@@ -44,12 +39,18 @@ public class GameService {
         return getCards().remove(0);
     }
 
-    public void initGame() {
+    public void initGame() throws InterruptedException {
         getDealer().newGame();
         getPlayers().get(0).newGame();
         dealer.setCardHidden(serveCard());
         players.get(0).hit(serveCard());
+
+        Thread.sleep(500);
+
         dealer.hit(serveCard());
+
+        Thread.sleep(500);
+
         players.get(0).hit(serveCard());
         dealer.printCardsOnBoard();
         players.get(0).printCardsOnBoard();
@@ -79,7 +80,7 @@ public class GameService {
         this.players = players;
     }
 
-    public String dealerHit() {
+    public String dealerHit() throws InterruptedException {
         String message = null;
 
         // from dealer rules
@@ -91,6 +92,9 @@ public class GameService {
             if (message != null) {
                 if (message.equals(BUSTED)) {
                     System.out.println("Dealer busted. You win.");
+
+                    Thread.sleep(500);
+
                     System.out.println("Start next game ...");
                 } else if (message.equals(GOAL)) {
                     System.out.println("Dealer reaches GOAL.");
@@ -103,11 +107,14 @@ public class GameService {
         return HOLD;
     }
 
-    public String playerHit() {
+    public String playerHit() throws InterruptedException {
         String message = getPlayers().get(0).hit(serveCard());
         if (message != null) {
             if (message.equals(BUSTED)) {
                 System.out.println(getPlayers().get(0).getName() + " busted.");
+
+                Thread.sleep(500);
+
                 System.out.println("Start next game ...");
             } else if (message.equals(GOAL)) {
                 System.out.println("Dealer reaches GOAL.");
@@ -146,15 +153,5 @@ public class GameService {
     }
 
     public static void main(String[] args) {
-        GameService gs = new GameService();
-        System.out.println(gs.players.get(0).getLowScore());
-        System.out.println(gs.players.get(0).getHiScore());
-        System.out.println(gs.players.get(0).hit(gs.serveCard()));
-        gs.players.get(0).printCardsOnBoard();
-        System.out.println(gs.players.get(0).getLowScore());
-        System.out.println(gs.players.get(0).getHiScore());
-        System.out.println(gs.players.get(0).hit(gs.serveCard()));
-        System.out.println(gs.players.get(0).getLowScore());
-        System.out.println(gs.players.get(0).getHiScore());
     }
 }
