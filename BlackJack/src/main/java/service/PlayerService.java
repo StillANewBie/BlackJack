@@ -27,6 +27,21 @@ public class PlayerService extends GenericPlayerService {
         ((Player) getPlayer()).setName(name);
     }
 
+
+    public String hit(Card card) {
+
+        String result = validateBeforeHit();
+        if (result != null) return result;
+
+        getCardsOnBoard().add(card);
+
+        System.out.println(getName() + " hit ...");
+
+        printCardsOnBoard();
+
+        return validateAfterHit();
+    }
+
     @Override
     public void printCardsOnBoard() {
         System.out.println( getName() + ":");

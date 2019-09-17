@@ -106,18 +106,4 @@ public abstract class GenericPlayerService {
     public void printCardsOnBoard() {
         DeckService.printExistingCards(getCardsOnBoard());
     }
-
-    public String hit(Card card) {
-
-        String result = validateBeforeHit();
-        if (result != null) return result;
-
-        getCardsOnBoard().add(card);
-
-//        System.out.println(getName() + " hit ...");
-
-        printCardsOnBoard();
-
-        return validateAfterHit();
-    }
 }
