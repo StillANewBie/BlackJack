@@ -7,7 +7,6 @@ public abstract class GenericPlayer {
 
     private int hiScore;
     private int lowScore;
-    private int scoreWithoutA;
     private int cumulativeScore;
     private int numOfAce;
     private List<Card> cardsOnBoard;
@@ -46,14 +45,6 @@ public abstract class GenericPlayer {
 
     public void setLowScore(int lowScore) {
         this.lowScore = lowScore;
-    }
-
-    public int getScoreWithoutA() {
-        return scoreWithoutA;
-    }
-
-    public void setScoreWithoutA(int scoreWithoutA) {
-        this.scoreWithoutA = scoreWithoutA;
     }
 
     public List<Card> getCardsOnBoard() {

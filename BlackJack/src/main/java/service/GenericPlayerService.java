@@ -44,11 +44,10 @@ public abstract class GenericPlayerService {
     }
 
     public int getScoreWithoutA() {
-        return this.player.getScoreWithoutA();
-    }
+        int sum = this.player.getCardsOnBoard()
+                .stream().mapToInt(el -> el.getRank().getValue()).sum();
 
-    public void setScoreWithoutA(int value) {
-        this.player.setScoreWithoutA(value);
+        return sum;
     }
 
     public int getHiScore() {
@@ -94,7 +93,6 @@ public abstract class GenericPlayerService {
     public void clearScore() {
         setHiScore(0);
         setLowScore(0);
-        setScoreWithoutA(0);
     }
 
     public String hit(Card card) {
@@ -117,7 +115,13 @@ public abstract class GenericPlayerService {
     }
 
     public void calcHighScore() {
-        //TODO
+        if (getNumOfAce() < 1) {
+            setHiScore(getScoreWithoutA());
+            return;
+        }
+        int max = getScoreWithoutA() + ACE_HIGH_VALUE + getNumOfAce() - 1;
+        int value = max > 21 ? getScoreWithoutA() + getNumOfAce() : max;
+        setHiScore(value);
     }
 
     public void printCardsOnBoard() {
