@@ -7,26 +7,31 @@ import model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+import static factory.ConstantsFactory.NUM_DECK;
+
 public class GameService {
 
     private List<Card> cards;
     private DealerService dealer;
     private List<PlayerService> players;
 
+    // for single player only
     public GameService() {
         this.dealer = new DealerService(new Dealer());
         this.players = new ArrayList<>();
+        this.players.add(new PlayerService(new Player(0, "Player 1")));
+        this.cards = DeckService.initDeck(NUM_DECK);
 
         initGame();
     }
 
-    public void initDecks(int num) {
-        this.cards = DeckService.initDeck(num);
-    }
+//    public void initDecks(int num) {
+//        this.cards = DeckService.initDeck(num);
+//    }
 
-    // for one player only.
+    // for single player only.
     public void initPlayer(String name) {
-        this.players.add(new PlayerService(new Player(0, name)));
+        this.players.get(0).setName(name);
     }
 
 //    // for multiple players
