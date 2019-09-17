@@ -6,6 +6,8 @@ import model.GenericPlayer;
 import java.util.ArrayList;
 import java.util.List;
 
+import static factory.ConstantsFactory.ACE_HIGH_VALUE;
+
 public abstract class GenericPlayerService {
     private GenericPlayer player;
 
@@ -96,19 +98,26 @@ public abstract class GenericPlayerService {
     }
 
     public String hit(Card card) {
-
-
+        // TODO
         return null;
     }
 
     String validateBeforeHit() {
-
+        // TODO
         return null;
     }
 
     String validateAfterHit() {
-
+        // TODO
         return null;
+    }
+
+    public void calcLowScore() {
+        setLowScore(getNumOfAce() + getScoreWithoutA());
+    }
+
+    public void calcHighScore() {
+        //TODO
     }
 
     public void printCardsOnBoard() {
