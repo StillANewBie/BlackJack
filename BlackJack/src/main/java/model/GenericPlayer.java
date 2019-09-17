@@ -5,21 +5,15 @@ import java.util.List;
 
 public abstract class GenericPlayer {
 
-    private int score;
+    private int hiScore;
+    private int lowScore;
+    private int scoreWithoutA;
     private int cumulativeScore;
     private int numOfAce;
     private List<Card> cardsOnBoard;
 
     public GenericPlayer() {
         this.cardsOnBoard = new ArrayList<Card>();
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
     }
 
     public int getCumulativeScore() {
@@ -36,6 +30,30 @@ public abstract class GenericPlayer {
 
     public void setNumOfAce(int numOfAce) {
         this.numOfAce = numOfAce;
+    }
+
+    public int getHiScore() {
+        return hiScore;
+    }
+
+    public void setHiScore(int hiScore) {
+        this.hiScore = hiScore;
+    }
+
+    public int getLowScore() {
+        return lowScore;
+    }
+
+    public void setLowScore(int lowScore) {
+        this.lowScore = lowScore;
+    }
+
+    public int getScoreWithoutA() {
+        return scoreWithoutA;
+    }
+
+    public void setScoreWithoutA(int scoreWithoutA) {
+        this.scoreWithoutA = scoreWithoutA;
     }
 
     public List<Card> getCardsOnBoard() {

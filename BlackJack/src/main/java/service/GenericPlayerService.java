@@ -41,12 +41,28 @@ public abstract class GenericPlayerService {
         this.player.setCumulativeScore(getCumulativeScore() + value);
     }
 
-    public int getScore() {
-        return this.player.getScore();
+    public int getScoreWithoutA() {
+        return this.player.getScoreWithoutA();
     }
 
-    public void setScore(int score) {
-        this.player.setScore(score);
+    public void setScoreWithoutA(int value) {
+        this.player.setScoreWithoutA(value);
+    }
+
+    public int getHiScore() {
+        return this.player.getHiScore();
+    }
+
+    public int getLowScore() {
+        return this.player.getLowScore();
+    }
+
+    public void setHiScore(int num) {
+        this.player.setHiScore(num);
+    }
+
+    public void setLowScore(int num) {
+        this.player.setLowScore(num);
     }
 
     public int getNumOfAce() {
@@ -74,7 +90,9 @@ public abstract class GenericPlayerService {
     }
 
     public void clearScore() {
-        setScore(0);
+        setHiScore(0);
+        setLowScore(0);
+        setScoreWithoutA(0);
     }
 
     public String hit(Card card) {
