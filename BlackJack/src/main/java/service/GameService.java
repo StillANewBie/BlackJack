@@ -89,10 +89,10 @@ public class GameService {
                 && getDealer().getHiScore() < DEALER_HIGH_ACE_HIT)) {
             message = getDealer().hit(serveCard());
             if (message != null) {
-                if (message.equals("BUSTED")) {
+                if (message.equals(BUSTED)) {
                     System.out.println("Dealer busted. You win.");
                     System.out.println("Start next game ...");
-                } else if (message.equals("GOAL")) {
+                } else if (message.equals(GOAL)) {
                     System.out.println("Dealer reaches GOAL.");
                 }
             }
@@ -100,8 +100,7 @@ public class GameService {
             return message;
         }
 
-        message = "Dealer Holds";
-        return null;
+        return HOLD;
     }
 
     public String playerHit() {

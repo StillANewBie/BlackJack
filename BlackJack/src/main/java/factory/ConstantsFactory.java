@@ -9,4 +9,5 @@ public class ConstantsFactory {
     public static final String ERROR = "ERROR";
     public static final String BUSTED = "BUSTED";
     public static final String GOAL = "GOAL";
+    public static final String HOLD = "HOLD";
 }
