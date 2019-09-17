@@ -3,6 +3,7 @@ package service;
 import model.Card;
 import model.GenericPlayer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GenericPlayerService {
@@ -10,6 +11,18 @@ public abstract class GenericPlayerService {
 
     public GenericPlayerService(GenericPlayer player) {
         this.player = player;
+        initPlayer();
+    }
+
+    public void initPlayer() {
+        newGame();
+        clearScore();
+        clearNumOfAce();
+        clearCumulativeScore();
+    }
+
+    public void newGame() {
+        getPlayer().setCardsOnBoard(new ArrayList<Card>());
     }
 
     public GenericPlayer getPlayer() {
@@ -75,8 +88,13 @@ public abstract class GenericPlayerService {
         return null;
     }
 
-    String validateAfterhit() {
+    String validateAfterHit() {
 
         return null;
+    }
+
+    public void printCardsOnBoard(String name) {
+        System.out.println(name + ": ");
+        DeckService.printExistingCards(getCardsOnBoard());
     }
 }
