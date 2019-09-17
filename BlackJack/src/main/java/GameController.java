@@ -13,6 +13,7 @@ public class GameController {
 
     public void init() {
         // TODO
+        startGame();
     }
 
     public void startGame() {

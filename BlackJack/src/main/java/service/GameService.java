@@ -3,6 +3,7 @@ package service;
 import model.Card;
 import model.Dealer;
 import model.Player;
+import model.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,8 +118,24 @@ public class GameService {
         return message;
     }
 
-    public void setCumulativeScores() {
-        // TODO
+    public void setCumulativeScores(Result res) {
+        switch (res) {
+            case PLAYERWIN1:
+                getPlayers().get(0).setCumulativeScore(1);
+                break;
+            case DEALERWIN1:
+                getDealer().setCumulativeScore(1);
+                break;
+            case PLAYERWIN2:
+                getPlayers().get(0).setCumulativeScore(2);
+                break;
+            case DEALERWIN2:
+                getDealer().setCumulativeScore(2);
+                break;
+            case DRAW:
+                getDealer().setCumulativeScore(1);
+                getPlayers().get(0).setCumulativeScore(1);
+        }
     }
 
     public static void main(String[] args) {
