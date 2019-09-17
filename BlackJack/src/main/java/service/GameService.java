@@ -148,8 +148,8 @@ public class GameService {
                 System.out.println("Draw");
         }
 
-        System.out.println("Dealer: " + getDealer().getCumulativeScore());
-        System.out.println(getPlayers().get(0).getName() + ": " + getPlayers().get(0).getCumulativeScore());
+        System.out.println("Dealer Score: " + getDealer().getCumulativeScore());
+        System.out.println(getPlayers().get(0).getName() + " Score: " + getPlayers().get(0).getCumulativeScore());
     }
 
     public static void main(String[] args) {

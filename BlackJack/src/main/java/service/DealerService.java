@@ -3,9 +3,6 @@ package service;
 import model.Card;
 import model.Dealer;
 import model.GenericPlayer;
-import model.Rank;
-
-import static factory.ConstantsFactory.GAME_GOAL;
 
 public class DealerService extends GenericPlayerService {
 

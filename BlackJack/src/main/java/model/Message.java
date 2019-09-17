@@ -1,5 +1,6 @@
 package model;
 
+// for future use (replace string and prepare for restful)
 public abstract class Message {
 
     private GameMessageType messageType;

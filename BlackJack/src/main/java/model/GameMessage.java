@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 
+// for future use (replace string and prepare for restful)
 public class GameMessage extends Message {
 
     private List<Card> cardList1;
