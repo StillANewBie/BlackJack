@@ -3,8 +3,7 @@ import service.GameService;
 
 import java.util.Scanner;
 
-import static factory.ConstantsFactory.BUSTED;
-import static factory.ConstantsFactory.GOAL;
+import static factory.ConstantsFactory.*;
 
 public class GameController {
 
@@ -27,7 +26,7 @@ public class GameController {
         String messageDealer = gs.dealerHit();
         String messagePlayer = null;
         String responsePlayer = "y";
-        while (messageDealer == null && messagePlayer == null) {
+        while (messagePlayer == null && responsePlayer.equals("y")) {
             System.out.println("Do you still want to hit a card? press 'y' to hit.");
             if (responsePlayer.equals("y")) {
                 responsePlayer = scanner.nextLine().toLowerCase();
@@ -40,7 +39,15 @@ public class GameController {
             messageDealer = gs.dealerHit();
 
             if (messageDealer != null && !responsePlayer.toLowerCase().equals("y")) {
-                if (messageDealer.equals(BUSTED)) {
+                if (!responsePlayer.equals("y") && messageDealer.equals(HOLD)) {
+                    int comp = gs.getDealer().getHiScore() - gs.getPlayers().get(0).getHiScore();
+                    if (comp < 0) {
+                        gs.setCumulativeScores(Result.PLAYERWIN1);
+                    } else {
+                        // dealer wins if both have the same points which are not equal to 21
+                        gs.setCumulativeScores(Result.DEALERWIN1);
+                    }
+                } else if (messageDealer.equals(BUSTED)) {
                     if (gs.getPlayers().get(0).getCardsOnBoard().size() == 2) {
                         gs.setCumulativeScores(Result.PLAYERWIN2);
                     } else {
@@ -58,19 +65,13 @@ public class GameController {
                     gs.setCumulativeScores(Result.PLAYERWIN1);
                 } else if (messageDealer.equals(GOAL)) {
                     gs.setCumulativeScores(Result.DEALERWIN1);
-                } else if (!responsePlayer.equals("y") && !responsePlayer.equals("y")) {
-                    int comp = gs.getDealer().getHiScore() - gs.getPlayers().get(0).getHiScore();
-                    if (comp < 0) {
-                        gs.setCumulativeScores(Result.PLAYERWIN1);
-                    } else {
-                        // dealer wins if both have the same points which are not equal to 21
-                        gs.setCumulativeScores(Result.DEALERWIN1);
-                    }
                 }
+
                 System.out.println(gs.getPlayers().get(0).getName() + ": " + gs.getPlayers().get(0).getCumulativeScore());
                 System.out.println("Dealer: " + gs.getDealer().getCumulativeScore());
                 System.out.println("Game over");
                 System.out.println("Enter 'exit' to exit, otherwise the game will start.");
+                break;
             }
         }
     }

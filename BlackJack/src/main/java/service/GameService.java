@@ -121,6 +121,7 @@ public class GameService {
         switch (res) {
             case PLAYERWIN1:
                 getPlayers().get(0).setCumulativeScore(1);
+                System.out.println();
                 break;
             case DEALERWIN1:
                 getDealer().setCumulativeScore(1);
