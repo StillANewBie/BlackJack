@@ -7,7 +7,7 @@ import model.Rank;
 import java.util.ArrayList;
 import java.util.List;
 
-import static factory.ConstantsFactory.ACE_HIGH_VALUE;
+import static factory.ConstantsFactory.*;
 
 public abstract class GenericPlayerService {
     private GenericPlayer player;
@@ -19,8 +19,6 @@ public abstract class GenericPlayerService {
 
     public void initPlayer() {
         newGame();
-        clearScore();
-        clearNumOfAce();
         clearCumulativeScore();
     }
 
@@ -66,14 +64,6 @@ public abstract class GenericPlayerService {
         return getNumOfAce() + getScoreWithoutA();
     }
 
-    public void setHiScore(int num) {
-        this.player.setHiScore(num);
-    }
-
-    public void setLowScore(int num) {
-        this.player.setLowScore(num);
-    }
-
     public int getNumOfAce() {
         return getCardsOnBoard().stream().filter(el -> el.getRank().getDisplayValue().equals(Rank.ACE)).toArray().length;
     }
@@ -96,13 +86,25 @@ public abstract class GenericPlayerService {
     }
 
     String validateBeforeHit() {
-        // TODO
+        if (getLowScore() >= GAME_GOAL) {
+            return ERROR;
+        }
+
         return null;
     }
 
     String validateAfterHit() {
-        // TODO
+        if (getLowScore() > GAME_GOAL) {
+            return BUSTED;
+        } else if (isGoal()) {
+            return GOAL;
+        }
+
         return null;
+    }
+
+    private boolean isGoal() {
+        return getHiScore() == 21 || getLowScore() == 21;
     }
 
     public void printCardsOnBoard() {
