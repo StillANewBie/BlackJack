@@ -121,21 +121,28 @@ public class GameService {
         switch (res) {
             case PLAYERWIN1:
                 getPlayers().get(0).setCumulativeScore(1);
-                System.out.println();
+                System.out.println(getPlayers().get(0).getName() + "wins");
                 break;
             case DEALERWIN1:
                 getDealer().setCumulativeScore(1);
+                System.out.println("Dealer wins");
                 break;
             case PLAYERWIN2:
                 getPlayers().get(0).setCumulativeScore(2);
+                System.out.println(getPlayers().get(0).getName() + "wins");
                 break;
             case DEALERWIN2:
                 getDealer().setCumulativeScore(2);
+                System.out.println("Dealer wins");
                 break;
             case DRAW:
                 getDealer().setCumulativeScore(1);
                 getPlayers().get(0).setCumulativeScore(1);
+                System.out.println("Draw");
         }
+
+        System.out.println("Dealer: " + getDealer().getCumulativeScore());
+        System.out.println(getPlayers().get(0).getName() + ": " + getPlayers().get(0).getCumulativeScore());
     }
 
     public static void main(String[] args) {
