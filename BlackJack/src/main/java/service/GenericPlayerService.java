@@ -53,11 +53,17 @@ public abstract class GenericPlayerService {
     }
 
     public int getHiScore() {
-        return this.player.getHiScore();
+        if (getNumOfAce() < 1) {
+            return getScoreWithoutA();
+        }
+        int max = getScoreWithoutA() + ACE_HIGH_VALUE + getNumOfAce() - 1;
+        int value = max > 21 ? getScoreWithoutA() + getNumOfAce() : max;
+
+        return value;
     }
 
     public int getLowScore() {
-        return this.player.getLowScore();
+        return getNumOfAce() + getScoreWithoutA();
     }
 
     public void setHiScore(int num) {
@@ -69,11 +75,7 @@ public abstract class GenericPlayerService {
     }
 
     public int getNumOfAce() {
-        return this.player.getNumOfAce();
-    }
-
-    public void setNumOfAce(int value) {
-        this.player.setNumOfAce(value);
+        return getCardsOnBoard().stream().filter(el -> el.getRank().getDisplayValue().equals(Rank.ACE)).toArray().length;
     }
 
     public List<Card> getCardsOnBoard() {
@@ -86,15 +88,6 @@ public abstract class GenericPlayerService {
 
     public void clearCumulativeScore() {
         setCumulativeScore(0);
-    }
-
-    public void clearNumOfAce() {
-        setNumOfAce(0);
-    }
-
-    public void clearScore() {
-        setHiScore(0);
-        setLowScore(0);
     }
 
     public String hit(Card card) {
@@ -110,20 +103,6 @@ public abstract class GenericPlayerService {
     String validateAfterHit() {
         // TODO
         return null;
-    }
-
-    public void calcLowScore() {
-        setLowScore(getNumOfAce() + getScoreWithoutA());
-    }
-
-    public void calcHighScore() {
-        if (getNumOfAce() < 1) {
-            setHiScore(getScoreWithoutA());
-            return;
-        }
-        int max = getScoreWithoutA() + ACE_HIGH_VALUE + getNumOfAce() - 1;
-        int value = max > 21 ? getScoreWithoutA() + getNumOfAce() : max;
-        setHiScore(value);
     }
 
     public void printCardsOnBoard() {

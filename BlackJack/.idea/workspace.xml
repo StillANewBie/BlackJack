@@ -271,24 +271,18 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/service/GenericPlayerService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="237">
-                  <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+                <state relative-caret-position="337">
+                  <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#840#841#0" expanded="true" />
                     <element signature="e#916#917#0" expanded="true" />
-                    <element signature="e#1135#1136#0" expanded="true" />
-                    <element signature="e#1182#1183#0" expanded="true" />
                     <element signature="e#1214#1215#0" expanded="true" />
                     <element signature="e#1262#1263#0" expanded="true" />
                     <element signature="e#1301#1302#0" expanded="true" />
                     <element signature="e#1344#1345#0" expanded="true" />
                     <element signature="e#1384#1385#0" expanded="true" />
                     <element signature="e#1428#1429#0" expanded="true" />
-                    <element signature="e#1460#1461#0" expanded="true" />
-                    <element signature="e#1508#1509#0" expanded="true" />
-                    <element signature="e#2374#2375#0" expanded="true" />
-                    <element signature="e#2437#2438#0" expanded="true" />
                     <element signature="e#2279#2280#0" expanded="true" />
                     <element signature="e#2344#2345#0" expanded="true" />
                   </folding>
@@ -412,7 +406,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568693777689" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568694002831" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -459,12 +453,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568686237058</updated>
-      <workItem from="1568686240957" duration="7358000" />
+      <workItem from="1568686240957" duration="7611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7358000" />
+    <option name="totallyTimeSpent" value="7611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1003" extended-state="6" />
@@ -796,24 +790,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/GenericPlayerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="337">
+          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#840#841#0" expanded="true" />
             <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
             <element signature="e#1214#1215#0" expanded="true" />
             <element signature="e#1262#1263#0" expanded="true" />
             <element signature="e#1301#1302#0" expanded="true" />
             <element signature="e#1344#1345#0" expanded="true" />
             <element signature="e#1384#1385#0" expanded="true" />
             <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-            <element signature="e#1508#1509#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
-            <element signature="e#2437#2438#0" expanded="true" />
             <element signature="e#2279#2280#0" expanded="true" />
             <element signature="e#2344#2345#0" expanded="true" />
           </folding>
