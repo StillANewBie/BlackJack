@@ -13,13 +13,20 @@ public class GameService {
     private DealerService dealer;
     private List<PlayerService> players;
 
-    public GameService(int numDeck, String name) {
+    public GameService() {
         this.dealer = new DealerService(new Dealer());
         this.players = new ArrayList<>();
-        this.players.add(new PlayerService(new Player(0, name)));
-        this.cards = DeckService.initDeck(numDeck);
 
         initGame();
+    }
+
+    public void initDecks(int num) {
+        this.cards = DeckService.initDeck(num);
+    }
+
+    // for one player only.
+    public void initPlayer(String name) {
+        this.players.add(new PlayerService(new Player(0, name)));
     }
 
 //    // for multiple players
@@ -70,5 +77,7 @@ public class GameService {
         // TODO
     }
 
+    public static void main(String[] args) {
 
+    }
 }
