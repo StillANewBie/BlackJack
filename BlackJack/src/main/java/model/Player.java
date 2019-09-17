@@ -3,9 +3,9 @@ package model;
 public class Player extends GenericPlayer {
 
     private int order;
-    private int name;
+    private String name;
 
-    public Player(int order, int name) {
+    public Player(int order, String name) {
         super();
         this.order = order;
         this.name = name;
@@ -19,11 +19,11 @@ public class Player extends GenericPlayer {
         this.order = order;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
