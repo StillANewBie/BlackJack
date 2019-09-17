@@ -23,7 +23,7 @@ public class DealerService extends GenericPlayerService {
         System.out.println("Dealer: ");
 
         // hidden card
-        System.out.print("*******\t");
+        System.out.print("Card *******\t");
         super.printCardsOnBoard();
     }
 }

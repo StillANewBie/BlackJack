@@ -44,16 +44,10 @@ public abstract class GenericPlayerService {
     }
 
     public int getScoreWithoutA() {
-//        int sum = this.player.getCardsOnBoard()
-//                .stream().filter(el -> !el.getRank().getDisplayValue().equals(Rank.ACE))
-//                .mapToInt(el -> el.getRank().getValue()).sum();
-        AtomicInteger sum = new AtomicInteger();
-        this.player.getCardsOnBoard().forEach(el -> {
-            if (el.getRank().getValue() != 11) {
-                sum.addAndGet(el.getRank().getValue());
-            }
-        });
-        return sum.get();
+        int sum = this.player.getCardsOnBoard()
+                .stream().filter(el -> el.getRank().getValue() != 11)
+                .mapToInt(el -> el.getRank().getValue()).sum();
+        return sum;
     }
 
     public int getHiScore() {

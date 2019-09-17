@@ -171,8 +171,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/service/DealerService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+                <state relative-caret-position="345">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#152#153#0" expanded="true" />
@@ -273,18 +273,18 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/service/GenericPlayerService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+                <state relative-caret-position="307">
+                  <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#840#841#0" expanded="true" />
                     <element signature="e#916#917#0" expanded="true" />
-                    <element signature="e#1947#1948#0" expanded="true" />
-                    <element signature="e#2184#2185#0" expanded="true" />
-                    <element signature="e#2287#2288#0" expanded="true" />
-                    <element signature="e#2366#2367#0" expanded="true" />
-                    <element signature="e#2797#2798#0" expanded="true" />
-                    <element signature="e#2901#2902#0" expanded="true" />
+                    <element signature="e#1682#1683#0" expanded="true" />
+                    <element signature="e#1919#1920#0" expanded="true" />
+                    <element signature="e#2022#2023#0" expanded="true" />
+                    <element signature="e#2101#2102#0" expanded="true" />
+                    <element signature="e#2532#2533#0" expanded="true" />
+                    <element signature="e#2636#2637#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -324,8 +324,8 @@
         <option value="$PROJECT_DIR$/src/main/java/service/GameService.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/factory/ConstantsFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/DealerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/GenericPlayerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DealerService.java" />
       </list>
     </option>
   </component>
@@ -406,7 +406,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568695830290" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568695920490" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -461,12 +461,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568686237058</updated>
-      <workItem from="1568686240957" duration="9407000" />
+      <workItem from="1568686240957" duration="9493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9407000" />
+    <option name="totallyTimeSpent" value="9493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1003" extended-state="6" />
@@ -794,26 +794,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/GenericPlayerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="307">
+          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#840#841#0" expanded="true" />
             <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#1947#1948#0" expanded="true" />
-            <element signature="e#2184#2185#0" expanded="true" />
-            <element signature="e#2287#2288#0" expanded="true" />
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2901#2902#0" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
+            <element signature="e#1919#1920#0" expanded="true" />
+            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="e#2101#2102#0" expanded="true" />
+            <element signature="e#2532#2533#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/DealerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#152#153#0" expanded="true" />
