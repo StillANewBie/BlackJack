@@ -2,6 +2,7 @@ package service;
 
 import model.Card;
 import model.GenericPlayer;
+import model.Rank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,8 @@ public abstract class GenericPlayerService {
 
     public int getScoreWithoutA() {
         int sum = this.player.getCardsOnBoard()
-                .stream().mapToInt(el -> el.getRank().getValue()).sum();
+                .stream().filter(el -> !el.getRank().getDisplayValue().equals(Rank.ACE))
+                .mapToInt(el -> el.getRank().getValue()).sum();
 
         return sum;
     }
