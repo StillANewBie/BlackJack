@@ -80,11 +80,6 @@ public abstract class GenericPlayerService {
         setCumulativeScore(0);
     }
 
-    public String hit(Card card) {
-        // TODO
-        return null;
-    }
-
     String validateBeforeHit() {
         if (getLowScore() >= GAME_GOAL) {
             return ERROR;
@@ -109,5 +104,19 @@ public abstract class GenericPlayerService {
 
     public void printCardsOnBoard() {
         DeckService.printExistingCards(getCardsOnBoard());
+    }
+
+    public String hit(Card card) {
+
+        String result = validateBeforeHit();
+        if (result != null) return result;
+
+        getCardsOnBoard().add(card);
+
+//        System.out.println(getName() + " hit ...");
+
+        printCardsOnBoard();
+
+        return validateAfterHit();
     }
 }

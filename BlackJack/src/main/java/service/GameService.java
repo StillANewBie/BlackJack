@@ -39,8 +39,19 @@ public class GameService {
 //
 //    }
 
+    public Card serveCard() {
+        return getCards().remove(0);
+    }
+
     public void initGame() {
-        // TODO
+        getDealer().newGame();
+        getPlayers().get(0).newGame();
+        dealer.setCardHidden(serveCard());
+        players.get(0).hit(serveCard());
+        dealer.hit(serveCard());
+        players.get(0).hit(serveCard());
+        dealer.printCardsOnBoard();
+        players.get(0).printCardsOnBoard();
     }
 
     public List<Card> getCards() {

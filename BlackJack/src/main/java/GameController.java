@@ -11,5 +11,10 @@ public class GameController {
         return gs;
     }
 
-
+    public static void main(String[] args) {
+        getGs().initPlayer("################");
+        getGs().getDealer().printCardsOnBoard();
+        getGs().getPlayers().get(0).printCardsOnBoard();
+        System.out.println(getGs().getPlayers().get(0).getHiScore());
+    }
 }

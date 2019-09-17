@@ -1,7 +1,9 @@
 package service;
 
+import model.Card;
 import model.GenericPlayer;
 import model.Player;
+import model.Rank;
 
 public class PlayerService extends GenericPlayerService {
 
