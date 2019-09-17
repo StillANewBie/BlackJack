@@ -25,6 +25,12 @@ public class PlayerService extends GenericPlayerService {
         ((Player) getPlayer()).setName(name);
     }
 
+    @Override
+    public void printCardsOnBoard() {
+        System.out.println( getName() + ":");
+        super.printCardsOnBoard();
+    }
+
     public static void main(String[] args) {
     }
 }

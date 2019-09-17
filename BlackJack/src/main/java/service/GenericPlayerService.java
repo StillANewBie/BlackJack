@@ -111,8 +111,7 @@ public abstract class GenericPlayerService {
         return null;
     }
 
-    public void printCardsOnBoard(String name) {
-        System.out.println(name + ": ");
+    public void printCardsOnBoard() {
         DeckService.printExistingCards(getCardsOnBoard());
     }
 }

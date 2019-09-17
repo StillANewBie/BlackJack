@@ -1,6 +1,6 @@
 package model;
 
-public class Dealer {
+public class Dealer extends GenericPlayer {
 
     private Card cardHidden;
 
