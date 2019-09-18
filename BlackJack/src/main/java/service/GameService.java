@@ -35,6 +35,9 @@ public class GameService {
 //
 //    }
 
+    public static void main(String[] args) {
+    }
+
     public Card serveCard() {
         return getCards().remove(0);
     }
@@ -150,8 +153,5 @@ public class GameService {
 
         System.out.println("Dealer Score: " + getDealer().getCumulativeScore());
         System.out.println(getPlayers().get(0).getName() + " Score: " + getPlayers().get(0).getCumulativeScore());
-    }
-
-    public static void main(String[] args) {
     }
 }

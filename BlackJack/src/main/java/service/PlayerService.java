@@ -3,12 +3,14 @@ package service;
 import model.Card;
 import model.GenericPlayer;
 import model.Player;
-import model.Rank;
 
 public class PlayerService extends GenericPlayerService {
 
     public PlayerService(GenericPlayer player) {
         super(player);
+    }
+
+    public static void main(String[] args) {
     }
 
     public int getOrder() {
@@ -27,7 +29,6 @@ public class PlayerService extends GenericPlayerService {
         ((Player) getPlayer()).setName(name);
     }
 
-
     public String hit(Card card) {
 
         String result = validateBeforeHit();
@@ -44,10 +45,7 @@ public class PlayerService extends GenericPlayerService {
 
     @Override
     public void printCardsOnBoard() {
-        System.out.println( getName() + ":");
+        System.out.println(getName() + ":");
         super.printCardsOnBoard();
-    }
-
-    public static void main(String[] args) {
     }
 }

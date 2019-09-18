@@ -15,16 +15,16 @@ public class Deck {
         }
     }
 
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
+    public static void main(String[] args) {
+        Deck deck = new Deck();
+        deck.getCards().forEach((el) -> System.out.println(el));
     }
 
     public List<Card> getCards() {
         return cards;
     }
 
-    public static void main(String[] args) {
-        Deck deck = new Deck();
-        deck.getCards().forEach((el) -> System.out.println(el));
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
     }
 }

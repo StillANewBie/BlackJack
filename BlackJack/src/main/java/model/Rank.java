@@ -7,7 +7,8 @@ public enum Rank {
 
     private int value;
     private String displayValue;
-    private Rank (int value, String displayValue) {
+
+    private Rank(int value, String displayValue) {
         this.value = value;
         this.displayValue = displayValue;
     }

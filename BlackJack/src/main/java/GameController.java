@@ -9,6 +9,11 @@ public class GameController {
 
     private GameService gs;
 
+    public static void main(String[] args) throws InterruptedException {
+        GameController gc = new GameController();
+        gc.init();
+    }
+
     public void init() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your name: ");
@@ -75,10 +80,5 @@ public class GameController {
                 break;
             }
         }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        GameController gc = new GameController();
-        gc.init();
     }
 }
