@@ -73,8 +73,6 @@ public class GameController {
                     gs.setCumulativeScores(Result.DEALERWIN1);
                 }
 
-                System.out.println(gs.getPlayers().get(0).getName() + ": " + gs.getPlayers().get(0).getCumulativeScore());
-                System.out.println("Dealer: " + gs.getDealer().getCumulativeScore());
                 System.out.println("Game over");
                 System.out.println("Enter 'exit' to exit, otherwise the game will start.");
                 break;
